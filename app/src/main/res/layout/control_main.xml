@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_bg_blur"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/statusBtnC"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameDeviceTVC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Device:"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/statusBtnC"
+        app:layout_constraintEnd_toStartOf="@+id/statusBtnC"
+        app:layout_constraintTop_toTopOf="@+id/statusBtnC" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="407dp"
+        android:layout_height="321dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageButton
+        android:id="@+id/connectBtn"
+        android:layout_width="208dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/guidBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidBtn"
+        app:layout_constraintTop_toBottomOf="@+id/guidBtn"
+        app:srcCompat="@drawable/btn_connect" />
+
+    <ImageButton
+        android:id="@+id/guidBtn"
+        android:layout_width="208dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/statusBtnC"
+        app:srcCompat="@drawable/btn_guid" />
+
+    <ImageButton
+        android:id="@+id/startBtn"
+        android:layout_width="208dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/connectBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/connectBtn"
+        app:layout_constraintTop_toBottomOf="@+id/connectBtn"
+        app:srcCompat="@drawable/btn_start" />
+
+    <ImageButton
+        android:id="@+id/infoBtn"
+        android:layout_width="208dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/controlBtn"
+        app:layout_constraintStart_toStartOf="@+id/controlBtn"
+        app:layout_constraintTop_toBottomOf="@+id/controlBtn"
+        app:srcCompat="@drawable/btn_info" />
+
+    <ImageButton
+        android:id="@+id/controlBtn"
+        android:layout_width="208dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="@+id/startBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/startBtn"
+        app:layout_constraintTop_toBottomOf="@+id/startBtn"
+        app:srcCompat="@drawable/btn_control" />
+
+    <ImageButton
+        android:id="@+id/resetBtn"
+        android:layout_width="50dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_reset" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

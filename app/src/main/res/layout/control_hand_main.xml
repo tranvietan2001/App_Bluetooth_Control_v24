@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/start_bg_blur">
+
+    <TextView
+        android:id="@+id/speed4Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/speed4SB"
+        app:layout_constraintTop_toTopOf="@+id/speed4SB" />
+
+    <TextView
+        android:id="@+id/speed3Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/speed3SB"
+        app:layout_constraintTop_toTopOf="@+id/speed3SB" />
+
+    <Button
+        android:id="@+id/statusBtnC"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameDeviceTVC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="Device:"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@+id/statusBtnC"
+        app:layout_constraintEnd_toStartOf="@+id/statusBtnC"
+        app:layout_constraintTop_toTopOf="@+id/statusBtnC" />
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="205dp"
+        android:layout_height="208dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/leftBtn"
+        app:layout_constraintStart_toEndOf="@+id/upBtn"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageButton
+        android:id="@+id/upBtn"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="64dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/btn_forward_up" />
+
+    <ImageButton
+        android:id="@+id/downBtn"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/upBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/upBtn"
+        app:layout_constraintTop_toBottomOf="@+id/upBtn"
+        app:srcCompat="@drawable/btn_backward_up" />
+
+    <ImageButton
+        android:id="@+id/leftBtn"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:srcCompat="@drawable/btn_left_up" />
+
+    <ImageButton
+        android:id="@+id/rightBtn"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/leftBtn"
+        app:layout_constraintStart_toStartOf="@+id/leftBtn"
+        app:layout_constraintTop_toBottomOf="@+id/leftBtn"
+        app:srcCompat="@drawable/btn_right_up" />
+
+    <TextView
+        android:id="@+id/ctr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="robot"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3" />
+
+    <SeekBar
+        android:id="@+id/speed1SB"
+        android:layout_width="350dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:clickable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/speed2SB"
+        android:layout_width="350dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/speed1SB"
+        app:layout_constraintTop_toBottomOf="@+id/speed1SB" />
+
+    <SeekBar
+        android:id="@+id/speed3SB"
+        android:layout_width="350dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/speed2SB"
+        app:layout_constraintTop_toBottomOf="@+id/speed2SB" />
+
+    <SeekBar
+        android:id="@+id/speed4SB"
+        android:layout_width="350dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/speed3SB"
+        app:layout_constraintTop_toBottomOf="@+id/speed3SB" />
+
+    <TextView
+        android:id="@+id/speed1Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/speed1SB"
+        app:layout_constraintTop_toTopOf="@+id/speed1SB" />
+
+    <TextView
+        android:id="@+id/speed2Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="0"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@+id/speed2SB"
+        app:layout_constraintTop_toTopOf="@+id/speed2SB" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="SPEED"
+        app:layout_constraintBottom_toBottomOf="@+id/speed1SB"
+        app:layout_constraintStart_toEndOf="@+id/speed1SB"
+        app:layout_constraintTop_toTopOf="@+id/speed1SB" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SERVO 01"
+        app:layout_constraintBottom_toBottomOf="@+id/speed2SB"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/speed2SB" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SERVO 02"
+        app:layout_constraintBottom_toBottomOf="@+id/speed3SB"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toTopOf="@+id/speed3SB" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SERVO 03"
+        app:layout_constraintBottom_toBottomOf="@+id/speed4SB"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toTopOf="@+id/speed4SB" />
+
+    <ImageButton
+        android:id="@+id/flagBtn"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+        app:layout_constraintStart_toEndOf="@+id/textView10"
+        app:srcCompat="@drawable/btn_flag"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/gunBtn"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:contentDescription="TODO"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/flagBtn"
+        app:layout_constraintTop_toTopOf="@+id/flagBtn"
+        app:srcCompat="@drawable/btn_gun" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

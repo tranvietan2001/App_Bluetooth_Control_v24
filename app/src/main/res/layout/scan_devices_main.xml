@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView1"
+        android:layout_width="360dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/logo"
+        app:layout_constraintEnd_toStartOf="@+id/recyclerView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
+        android:layout_width="360dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/recyclerView1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/scanBtn"
+        android:layout_width="368dp"
+        android:layout_height="92dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView1"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView1"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView1"
+        app:srcCompat="@drawable/btn_find_device" />
+
+    <ImageButton
+        android:id="@+id/connBtn"
+        android:layout_width="368dp"
+        android:layout_height="92dp"
+        android:backgroundTint="@color/cardview_shadow_end_color"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView2"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2"
+        app:srcCompat="@drawable/btn_history_device" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
