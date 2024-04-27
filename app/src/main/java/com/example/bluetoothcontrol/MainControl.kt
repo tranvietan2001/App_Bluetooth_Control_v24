@@ -40,7 +40,7 @@ class MainControl : AppCompatActivity() {
         var isConnected: Boolean = false
     }
 
-    @SuppressLint("SetJavaScriptEnabled", "ClickableViewAccessibility")
+    @SuppressLint("SetJavaScriptEnabled", "ClickableViewAccessibility", "ShowToast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.control_main)
@@ -63,6 +63,8 @@ class MainControl : AppCompatActivity() {
             val addressDevice = intent.getStringExtra("addressDevices")
             if (addressDevice != null && nameDevice!=null) {
                 connectDevice(addressDevice, nameDevice)
+
+//                Toast.makeText(this, nameDevice, Toast.LENGTH_LONG).show()
             }
         }
 
@@ -130,36 +132,22 @@ class MainControl : AppCompatActivity() {
 
     @SuppressLint("SetTextI18n")
     private fun connectDevice(addressDevice : String, nameDevice: String) {
-    try {
-        if (bluetoothSocket == null || !isConnected) {
-            bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-            val device: BluetoothDevice = bluetoothAdapter.getRemoteDevice(addressDevice)
-            if (ActivityCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.BLUETOOTH_CONNECT
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
-                return
+        try {
+            if (bluetoothSocket == null || !isConnected) {
+                bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
+                val device: BluetoothDevice = bluetoothAdapter.getRemoteDevice(addressDevice)
+                bluetoothSocket = device.createInsecureRfcommSocketToServiceRecord(myUUID)
+                BluetoothAdapter.getDefaultAdapter().cancelDiscovery()
+                bluetoothSocket!!.connect()
+                statusBtn?.setBackgroundColor(Color.GREEN)
+                nameDeviceTV?.text = nameDevice
+                isDeviceConnected = true
+                sendCommand("C\b")
             }
-            bluetoothSocket = device.createInsecureRfcommSocketToServiceRecord(myUUID)
-            BluetoothAdapter.getDefaultAdapter().cancelDiscovery()
-            bluetoothSocket!!.connect()
-            statusBtn?.setBackgroundColor(Color.GREEN)
-            nameDeviceTV?.text = nameDevice
-            isDeviceConnected = true
-            sendCommand("C\b")
         }
-    }
-    catch (e: IOException) {
-        nameDeviceTV?.text = "not device"
-        e.printStackTrace()
+        catch (e: IOException) {
+            nameDeviceTV?.text = "not device"
+            e.printStackTrace()
         }
 
     }
